@@ -5,7 +5,7 @@
 
 services:
 
-  Health_service:
+  health_service:
     build: .
     volumes:
       - ./:/app/
