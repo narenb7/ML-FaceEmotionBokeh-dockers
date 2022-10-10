@@ -1,3 +1,32 @@
 #Direct the main healthcheck to port 8000
 #Direct the face-bokeh to port 8001
 #Direct the face-emotion to port 8002
+
+
+services:
+
+  Health_service:
+    build: .
+    volumes:
+      - ./:/app/
+    ports:
+      - 8000:8000
+    depends_on:
+      - face_bokeh_service
+      - face_emotion_service
+
+  face_bokeh_service:
+    build: ./face-bokeh
+    volumes:
+      - ./face-bokeh/:/app/
+    ports:
+      - 8001:8000
+
+  face_emotion_service:
+    build: ./face-emotion
+    volumes:
+      - ./face-emotion/:/app/
+    ports:
+      - 8002:8000
+
+ 
