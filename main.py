@@ -3,8 +3,7 @@ from fastapi import FastAPI, File, UploadFile
 import requests
 
 app = FastAPI()
-face-bokeh = ec2-54-157-42-29.compute-1.amazonaws.com
-face-emotion = ec2-54-157-42-29.compute-1.amazonaws.com
+
 @app.get("/", tags=["Health Check"])
 async def root():
 #   return {"message": "Service is Online"}
